@@ -38,6 +38,7 @@ document.onkeypress = function (e) {
 	if(window.event && e.keyCode != 8) {
 		whichCharacter += 1;
 	} else if(window.event && e.keyCode === 8) {
+		whichCharacter -= 1;
 		numBackspace += 1;
 	}
 
@@ -52,10 +53,15 @@ document.onkeypress = function (e) {
 
 	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).style.backgroundColor = "green";
-	} else {
+	} else if (e.keyCode === 8) {
+		document.getElementById(charId).style.backgroundColor = "#2196f3";
+	}
+	else {
 		document.getElementById(charId).style.backgroundColor = "red";
 	}
 };
+
+//Keep the scrollbar still until it hits the end of displayed text
 
 // function myKeyPress(e){
 // 	var keynum;
