@@ -5,4 +5,4 @@ Using:
 2. plain CSS
 3. JS
 4. AXIOS (no JQuery)
-4. node for services 
+4. node for servers 

@@ -1,0 +1,5 @@
+How can I change the embedded text color???
+
+With embedded content, how to adjust text size with the browser - hardcoding width & height clearly didn't work
+
+Do I have to have 'document.body.onload'??
