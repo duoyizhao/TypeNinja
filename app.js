@@ -43,7 +43,7 @@ document.onkeypress = function (e) {
 
 	var charId = whichCharacter.toString();
 	var lessonChar = document.getElementById(charId).getAttribute("innerText");
-	var lessCharCode = lessonChar.charCodeAt(0);
+	var lessonCharCode = lessonChar.charCodeAt(0);
 
 	console.log(e.keyCode);
 	console.log(lessonChar);
