@@ -4,7 +4,7 @@ var charNum = 0;
 
 //document.body.onload = addElement;
 
-function addElement (charNum) {
+function addElement (charNum) { 
 
   // create a new inline element 
   // and give it some content   
@@ -15,15 +15,15 @@ function addElement (charNum) {
   newSpan.appendChild(newContent); //add the text node to the newly created div. 
 
   if (charNum === 0) {
-  	document.getElementById("lesson").appendChild(newSpan);
+  	document.getElementByid("lesson").appendChild(newSpan);
   } else {
 	  // add the newly created element and its content into the DOM 
 	  var prevCharNum = charNum - 1;
 	  var prevCharId = prevCharNum.CharNum.toString;
 	  var currentSpan = document.getElementById(prevCharId); 
-	  document.body.insertAfter(newSpan, currentSpan); 
-  };
-};
+	  currentSpan.appendChild(newSpan); 
+	}
+}
 
 //turn lesson string's each character into HTML's inline elements
 //div element 'lesson' will be the container for all the characters
