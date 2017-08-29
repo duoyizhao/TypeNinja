@@ -32,6 +32,7 @@ var whichCharacter = 0;
 var numBackspace = 0;
 
 document.onkeypress = function (e) {
+	e.preventDefault();
 	var keynum;
 	numKeysPressed += 1;
 
@@ -52,12 +53,12 @@ document.onkeypress = function (e) {
 	console.log(lessonCharCode);
 
 	if (e.keyCode === lessonCharCode) {
-		document.getElementById(charId).style.backgroundColor = "green";
+		document.getElementById(charId).style.backgroundColor = "#99f7dc";
 	} else if (e.keyCode === 8) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
 	}
 	else {
-		document.getElementById(charId).style.backgroundColor = "red";
+		document.getElementById(charId).style.backgroundColor = "#f2b38e";
 	}
 };
 
