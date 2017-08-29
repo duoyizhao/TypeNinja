@@ -42,8 +42,8 @@ document.onkeypress = function (e) {
 	}
 
 	var charId = whichCharacter.toString();
-	if (e.keyCode === document.getElementById("charId") {
-		document.getElementById("charId").setAttribute("color", green);
+	if (e.keyCode === document.getElementById(charId)) {
+		document.getElementById(charId).setAttribute("color", green);
 	}
 };
 
