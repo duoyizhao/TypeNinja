@@ -19,7 +19,7 @@ function addElement (charNum) {
   } else {
 	  // add the newly created element and its content into the DOM 
 	  var prevCharNum = charNum - 1;
-	  var prevCharId = prevCharNum.CharNum.toString();
+	  var prevCharId = prevCharNum.toString();
 	  var currentSpan = document.getElementById(prevCharId); 
 	  currentSpan.appendChild(newSpan); 
 	}
