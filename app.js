@@ -27,14 +27,26 @@ axios.get(`/lesson1.txt`)
         }
    });
  
-// document.onkeypress = function (event) {
-// 	console.log(event);
-// };
+var numKeysPressed = 0;
+var whichCharacter = 0;
+var numBackspace = 0;
 
+document.onkeypress = function (e) {
+	var keynum;
+	numKeysPressed += 1;
 
-// var numKeysPressed = 0;
-// var whichCharacter = 0;
-// var numBackspace = 0;
+	if(window.event && e.keyCode != 8) {
+		whichCharacter += 1;
+	} else if(window.event && e.keyCode === 8) {
+		numBackspace += 1;
+	}
+
+	if(window.event) { // IE                    
+	  keynum = e.keyCode;
+	} else if(e.which){ // Netscape/Firefox/Opera                   
+	  keynum = e.which;
+	}
+};
 
 // function myKeyPress(e){
 // 	var keynum;
