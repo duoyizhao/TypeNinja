@@ -4,7 +4,7 @@ var charNum = 0;
 
 //document.body.onload = addElement;
 
-function addElement (charNum
+function addElement (charNum) {
 
   // create a new inline element 
   // and give it some content   
