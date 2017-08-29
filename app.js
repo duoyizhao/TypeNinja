@@ -21,8 +21,8 @@ function addElement (charNum
 	  var prevCharNum = charNum - 1;
 	  var prevCharId = prev.CharNum.toString;
 	  var currentSpan = document.getElementById(prevCharId); 
-	  currentSpan.appendChild(newSpan);
-  }
+	  document.body.insertAfter(newSpan, currentSpan); 
+  };
 };
 
 //turn lesson string's each character into HTML's inline elements
@@ -31,7 +31,7 @@ axios.get(`/lesson1.txt`)
    .then(function(response) {
    		text = response.data;
         totalCharNum = text.length;
-        for (i = 0; i < totalCharNum; i++) {
+        for (i = 0; i < totalCharNum; i ++) {
         	addElement(i);
         }
    });
