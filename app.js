@@ -41,10 +41,9 @@ document.onkeypress = function (e) {
 		numBackspace += 1;
 	}
 
-	if(window.event) { // IE                    
-	  keynum = e.keyCode;
-	} else if(e.which){ // Netscape/Firefox/Opera                   
-	  keynum = e.which;
+	var charId = whichCharacter.toString();
+	if (e.keyCode === document.getElementById("charId") {
+		document.getElementById("charId").setAttribute("color", green);
 	}
 };
 
