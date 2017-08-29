@@ -45,11 +45,15 @@ document.onkeypress = function (e) {
 	var lessonChar = document.getElementById(charId).innerText;
 	var lessonCharCode = lessonChar.charCodeAt(0);
 
+	console.log(e);
 	console.log(e.keyCode);
+	console.log(lessonChar);
 	console.log(lessonCharCode);
 
 	if (e.keyCode === lessonCharCode) {
-		document.getElementById(charId).setAttribute("color", green);
+		document.getElementById(charId).style.backgroundColor = "green";
+	} else {
+		document.getElementById(charId).style.backgroundColor = "red";
 	}
 };
 
