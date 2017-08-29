@@ -4,24 +4,26 @@ var charNum = 0;
 
 //document.body.onload = addElement;
 
-function addElement (charNum) { 
+function addElement (charNum
 
   // create a new inline element 
   // and give it some content   
+  var charId = charNum.toString;
   var newSpan = document.createElement("span"); 
-  newSpan.setAttribute("id", charNum);
+  newSpan.setAttribute("id", charId);
   var newContent = document.createTextNode(text[charNum]); 
   newSpan.appendChild(newContent); //add the text node to the newly created div. 
 
   if (charNum === 0) {
-  	document.getElementByid("lesson").appendChild(newSpan);
+  	document.getElementById("lesson").appendChild(newSpan);
+  } else {
+	  // add the newly created element and its content into the DOM 
+	  var prevCharNum = charNum - 1;
+	  var prevCharId = prev.CharNum.toString;
+	  var currentSpan = document.getElementById(prevCharId); 
+	  currentSpan.appendChild(newSpan);
   }
-
-  // add the newly created element and its content into the DOM 
-  var prevCharNum = charNum - 1;
-  var currentSpan = document.getElementById(prevCharNum); 
-  document.body.insertAfter(newSpan, currentSpan); 
-}
+};
 
 //turn lesson string's each character into HTML's inline elements
 //div element 'lesson' will be the container for all the characters
@@ -29,7 +31,7 @@ axios.get(`/lesson1.txt`)
    .then(function(response) {
    		text = response.data;
         totalCharNum = text.length;
-        for (i = 0; i < totalCharNum; i ++) {
+        for (i = 0; i < totalCharNum; i++) {
         	addElement(i);
         }
    });
