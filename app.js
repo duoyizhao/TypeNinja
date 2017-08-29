@@ -42,11 +42,11 @@ document.onkeypress = function (e) {
 	}
 
 	var charId = whichCharacter.toString();
-	var lessonChar = document.getElementById(charId).getAttribute("innerText");
+	var lessonChar = document.getElementById(charId).innerText;
 	var lessonCharCode = lessonChar.charCodeAt(0);
 
 	console.log(e.keyCode);
-	console.log(lessonChar);
+	console.log(lessonCharCode);
 
 	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).setAttribute("color", green);
