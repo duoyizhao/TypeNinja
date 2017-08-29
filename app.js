@@ -42,7 +42,13 @@ document.onkeypress = function (e) {
 	}
 
 	var charId = whichCharacter.toString();
-	if (e.keyCode === document.getElementById(charId)) {
+	var lessonChar = document.getElementById(charId).getAttribute("innerText");
+	var lessCharCode = lessonChar.charCodeAt(0);
+
+	console.log(e.keyCode);
+	console.log(lessonChar);
+
+	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).setAttribute("color", green);
 	}
 };
