@@ -8,7 +8,7 @@ function addElement (charNum) {
 
   // create a new inline element 
   // and give it some content   
-  var charId = charNum.toString;
+  var charId = charNum.toString();
   var newSpan = document.createElement("span"); 
   newSpan.setAttribute("id", charId);
   var newContent = document.createTextNode(text[charNum]); 
@@ -19,7 +19,7 @@ function addElement (charNum) {
   } else {
 	  // add the newly created element and its content into the DOM 
 	  var prevCharNum = charNum - 1;
-	  var prevCharId = prevCharNum.CharNum.toString;
+	  var prevCharId = prevCharNum.CharNum.toString();
 	  var currentSpan = document.getElementById(prevCharId); 
 	  currentSpan.appendChild(newSpan); 
 	}
