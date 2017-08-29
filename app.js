@@ -14,15 +14,7 @@ function addElement (charNum) {
   var newContent = document.createTextNode(text[charNum]); 
   newSpan.appendChild(newContent); //add the text node to the newly created div. 
 
-  if (charNum === 0) {
-  	document.getElementById("lesson").appendChild(newSpan);
-  } else {
-	  // add the newly created element and its content into the DOM 
-	  var prevCharNum = charNum - 1;
-	  var prevCharId = prevCharNum.toString();
-	  var currentSpan = document.getElementById(prevCharId); 
-	  currentSpan.appendChild(newSpan); 
-	}
+  document.getElementById("lesson").appendChild(newSpan);
 }
 
 //turn lesson string's each character into HTML's inline elements
