@@ -36,6 +36,10 @@ document.onkeypress = function (e) {
 	var keynum;
 	numKeysPressed += 1;
 
+	var charId = whichCharacter.toString();
+	var lessonChar = document.getElementById(charId).innerText;
+	var lessonCharCode = lessonChar.charCodeAt(0);
+
 	if(window.event && e.keyCode != 8) {
 		whichCharacter += 1;
 	} else if(window.event && e.keyCode === 8) {
@@ -43,22 +47,13 @@ document.onkeypress = function (e) {
 		numBackspace += 1;
 	}
 
-	var charId = whichCharacter.toString();
-	var lessonChar = document.getElementById(charId).innerText;
-	var lessonCharCode = lessonChar.charCodeAt(0);
-
-	console.log(e);
-	console.log(e.keyCode);
-	console.log(lessonChar);
-	console.log(lessonCharCode);
-
 	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).style.backgroundColor = "#99f7dc";
 	} else if (e.keyCode === 8) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
 	}
 	else {
-		document.getElementById(charId).style.backgroundColor = "#f2b38e";
+		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
 };
 
