@@ -5,9 +5,9 @@ var charNum = 0;
 //document.body.onload = addElement;
 
 function addElement (charNum) { 
+
   // create a new inline element 
-  // and give it some content 
-  var prevCharNum = charNum - 1;
+  // and give it some content   
   var newSpan = document.createElement("span"); 
   newSpan.setAttribute("id", charNum);
   var newContent = document.createTextNode(text[charNum]); 
@@ -16,7 +16,9 @@ function addElement (charNum) {
   if (charNum === 0) {
   	document.getElementByid("lesson").appendChild(newSpan);
   }
+
   // add the newly created element and its content into the DOM 
+  var prevCharNum = charNum - 1;
   var currentSpan = document.getElementById(prevCharNum); 
   document.body.insertAfter(newSpan, currentSpan); 
 }
@@ -32,12 +34,9 @@ axios.get(`/lesson1.txt`)
         }
    });
  
-document.onkeypress = function (event) {
-	console.log(event);
-};
-
-
-
+// document.onkeypress = function (event) {
+// 	console.log(event);
+// };
 
 
 // var numKeysPressed = 0;
