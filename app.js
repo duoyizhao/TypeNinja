@@ -12,12 +12,11 @@ function addElement (charNum) {
   var newSpan = document.createElement("span"); 
   newSpan.setAttribute("id", charId);
   var newContent = document.createTextNode(text[charNum]); 
-  newSpan.appendChild(newContent); //add the text node to the newly created div. 
+  newSpan.appendChild(newContent); 
 
   document.getElementById("lesson").appendChild(newSpan);
 }
 
-//turn lesson string's each character into HTML's inline elements
 //div element 'lesson' will be the container for all the characters
 axios.get(`/lesson1.txt`)
    .then(function(response) {
