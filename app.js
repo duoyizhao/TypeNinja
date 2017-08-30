@@ -40,7 +40,7 @@ document.onkeypress = function (e) {
 	var lessonChar = document.getElementById(charId).innerText;
 	var lessonCharCode = lessonChar.charCodeAt(0);
 
-	if(window.event && e.keyCode != 8) {
+	if(window.event && e.keyCode != 8 && e.keyCode != 46) {
 		whichCharacter += 1;
 	} else if(window.event && e.keyCode === 8 || e.keyCode === 46) {
 		if (whichCharacter !== 0) {
@@ -53,8 +53,7 @@ document.onkeypress = function (e) {
 		document.getElementById(charId).style.backgroundColor = "#99f7dc";
 	} else if (e.keyCode === 8 || e.keyCode === 46) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
-	}
-	else {
+	} else {
 		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
 };
@@ -65,14 +64,14 @@ document.onkeyup = function (e) {
 	var keynum;
 	numKeysPressed += 1;
 
-	var charId = whichCharacter.toString();
-
 	if(window.event && e.keyCode === 8 || e.keyCode === 46) {
 		if (whichCharacter !== 0) {
 			whichCharacter -= 1;
 			numBackspace += 1;
 		}
 	}
+
+	var charId = whichCharacter.toString();
 
 	if (e.keyCode === 8 || e.keyCode === 46) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
