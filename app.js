@@ -42,44 +42,45 @@ document.onkeypress = function (e) {
 
 	if(window.event && e.keyCode != 8) {
 		whichCharacter += 1;
-	} else if(window.event && e.keyCode === 8) {
-		whichCharacter -= 1;
-		numBackspace += 1;
+	} else if(window.event && e.keyCode === 8 || e.keyCode === 46) {
+		if (whichCharacter !== 0) {
+			whichCharacter -= 1;
+			numBackspace += 1;
+		}
 	}
 
 	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).style.backgroundColor = "#99f7dc";
-	} else {
+	} else if (e.keyCode === 8 || e.keyCode === 46) {
+		document.getElementById(charId).style.backgroundColor = "#2196f3";
+	}
+	else {
 		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
 };
 
-document.onkeydown = function (e) {
+//backspace & delete
+document.onkeyup = function (e) {
 	e.preventDefault();
 	var keynum;
 	numKeysPressed += 1;
 
 	var charId = whichCharacter.toString();
-	var lessonChar = document.getElementById(charId).innerText;
-	var lessonCharCode = lessonChar.charCodeAt(0);
 
-	if(window.event && e.keyCode != 8) {
-		whichCharacter += 1;
-	} else if(window.event && e.keyCode === 8) {
-		whichCharacter -= 1;
-		numBackspace += 1;
+	if(window.event && e.keyCode === 8 || e.keyCode === 46) {
+		if (whichCharacter !== 0) {
+			whichCharacter -= 1;
+			numBackspace += 1;
+		}
 	}
 
-	if (e.keyCode === lessonCharCode) {
-		document.getElementById(charId).style.backgroundColor = "#99f7dc";
-	} else if (e.keyCode === 8) {
+	if (e.keyCode === 8 || e.keyCode === 46) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
-	} else {
-		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
 };
 
-//Keep the scrollbar still until it hits the end of displayed text
+//Keep the scrollbar still until it hits the end of displayed text 
+// >> scroll doesn't automatically move yet!
 
 // function myKeyPress(e){
 // 	var keynum;
