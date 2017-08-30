@@ -1,6 +1,7 @@
 var text;
 var totalCharNum;
 var charNum = 0;
+var scrollAmount;
 
 //document.body.onload = addElement;
 
@@ -25,6 +26,7 @@ axios.get(`/lesson1.txt`)
         for (i = 0; i < totalCharNum; i ++) {
         	addElement(i);
         }
+        scrollAmount = parseInt(window.getComputedStyle(document.getElementById("lesson")).height) / 2;
    });
  
 var numKeysPressed = 0;
@@ -56,6 +58,9 @@ document.onkeypress = function (e) {
 	} else {
 		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
+	
+	document.getElementById(charId).scrollIntoView();
+	document.getElementById("lesson").scrollTop -= scrollAmount;
 };
 
 //backspace & delete
@@ -78,13 +83,11 @@ document.onkeyup = function (e) {
 	}
 };
 
+//accuracy calculation to keep tap of the wrongly typed 
 function replyClick() {
 	var accuracy = Math.round((whichCharacter / numKeysPressed) * 100);
 	alert("Your accuracy rate is: " + accuracy + "%");
 }
 
-//character's like quotation marks are not correctly being interpreted...
-//Keep the scrollbar still until it hits the end of displayed text 
-// >> scroll doesn't automatically move yet!
 
 
