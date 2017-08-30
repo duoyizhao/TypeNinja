@@ -78,28 +78,8 @@ document.onkeyup = function (e) {
 	}
 };
 
+//character's like quotation marks are not correctly being interpreted...
 //Keep the scrollbar still until it hits the end of displayed text 
 // >> scroll doesn't automatically move yet!
 
-// function myKeyPress(e){
-// 	var keynum;
-// 	numKeysPressed += 1;
 
-// 	if(window.event && e.keyCode != 8) {
-// 		whichCharacter += 1;
-// 	} else if(window.event && e.keyCode === 8) {
-// 		numBackspace += 1;
-// 	}
-
-// 	if(window.event) { // IE                    
-// 	  keynum = e.keyCode;
-// 	} else if(e.which){ // Netscape/Firefox/Opera                   
-// 	  keynum = e.which;
-// 	}
-
-	// document.onkeydown = function(evt) {
- //    evt = evt || window.event;
- //    if (evt.ctrlKey && evt.keyCode == 90) {
- //        alert("Ctrl-Z");
- //    }
-// };
