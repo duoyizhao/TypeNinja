@@ -62,7 +62,7 @@ document.onkeypress = function (e) {
 document.onkeyup = function (e) {
 	e.preventDefault();
 	var keynum;
-	numKeysPressed += 1;
+	//numKeysPressed += 1;
 
 	if(window.event && e.keyCode === 8 || e.keyCode === 46) {
 		if (whichCharacter !== 0) {
@@ -77,6 +77,11 @@ document.onkeyup = function (e) {
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
 	}
 };
+
+function replyClick() {
+	var accuracy = Math.round((whichCharacter / numKeysPressed) * 100);
+	alert("Your accuracy rate is: " + accuracy + "%");
+}
 
 //character's like quotation marks are not correctly being interpreted...
 //Keep the scrollbar still until it hits the end of displayed text 
