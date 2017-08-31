@@ -59,7 +59,7 @@ document.onkeypress = function (e) {
 		}, 500);
 	}
 
-	if(window.event && e.keyCode != 8 && e.keyCode != 46) {
+	if(window.event && e.keyCode != 8 && e.keyCode != 127) {
 		whichCharacter += 1;
 	} 
 
@@ -80,7 +80,7 @@ document.onkeyup = function (e) {
 	var keynum;
 	//numKeysPressed += 1;
 
-	if(window.event && e.keyCode === 8 || e.keyCode === 46) {
+	if(window.event && e.keyCode === 8 || e.keyCode === 127) {
 		if (whichCharacter !== 0) {
 			whichCharacter -= 1;
 			numBackspace += 1;
