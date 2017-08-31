@@ -2,6 +2,12 @@ var text;
 var totalCharNum;
 var charNum = 0;
 var scrollAmount;
+// var results;
+// var result = {
+// 	"datetime": null;
+// 	"user": null;
+// 	"accuracy": null;
+// }
 
 //document.body.onload = addElement;
 
@@ -19,7 +25,7 @@ function addElement (charNum) {
 }
 
 //div element 'lesson' will be the container for all the characters
-axios.get(`/lesson1.txt`)
+axios.get(`/lesson0.txt`)
    .then(function(response) {
    		text = response.data;
         totalCharNum = text.length;
