@@ -1,3 +1,5 @@
+//import includes from 'lodash/includes';
+
 var text;
 var totalCharNum;
 var charNum = 0;
@@ -48,6 +50,14 @@ document.onkeypress = function (e) {
 	var charId = whichCharacter.toString();
 	var lessonChar = document.getElementById(charId).innerText;
 	var lessonCharCode = lessonChar.charCodeAt(0);
+	var keys = ['a', 's', 'd', 'f'];
+
+	if (_.includes(keys, lessonChar)) {
+		document.getElementById(lessonChar).classList.add("highlighted");
+		setTimeout(function(){
+			document.getElementById(lessonChar).classList.remove("highlighted");
+		}, 500);
+	}
 
 	if(window.event && e.keyCode != 8 && e.keyCode != 46) {
 		whichCharacter += 1;
@@ -91,7 +101,7 @@ document.onkeyup = function (e) {
 function replyClick() {
 	var accuracy = Math.round((1 - (mistakes + numBackspace) / numKeysPressed) * 100);
 	alert("Your accuracy rate is: " + accuracy + "%; with " + numKeysPressed + " keys pressed & " + mistakes + " existing mistakes.");
-}
+};
 
 //keyboard - CSS, use vw unit
 //look into SVG a little too, it's an image. transform translate; transform scale
