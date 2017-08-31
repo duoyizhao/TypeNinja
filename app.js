@@ -32,6 +32,7 @@ axios.get(`/lesson1.txt`)
 var numKeysPressed = 0;
 var whichCharacter = 0;
 var numBackspace = 0;
+var mistakes = 0;
 
 document.onkeypress = function (e) {
 	e.preventDefault();
@@ -44,21 +45,15 @@ document.onkeypress = function (e) {
 
 	if(window.event && e.keyCode != 8 && e.keyCode != 46) {
 		whichCharacter += 1;
-	} else if(window.event && e.keyCode === 8 || e.keyCode === 46) {
-		if (whichCharacter !== 0) {
-			whichCharacter -= 1;
-			numBackspace += 1;
-		}
-	}
+	} 
 
 	if (e.keyCode === lessonCharCode) {
 		document.getElementById(charId).style.backgroundColor = "#99f7dc";
-	} else if (e.keyCode === 8 || e.keyCode === 46) {
-		document.getElementById(charId).style.backgroundColor = "#2196f3";
 	} else {
+		mistakes += 1;
 		document.getElementById(charId).style.backgroundColor = "#f2df35";
 	}
-	
+
 	document.getElementById(charId).scrollIntoView();
 	document.getElementById("lesson").scrollTop -= scrollAmount;
 };
@@ -79,15 +74,22 @@ document.onkeyup = function (e) {
 	var charId = whichCharacter.toString();
 
 	if (e.keyCode === 8 || e.keyCode === 46) {
+		if (mistakes > 0) {
+			mistakes -= 1;
+		}
 		document.getElementById(charId).style.backgroundColor = "#2196f3";
 	}
 };
 
 //accuracy calculation to keep tap of the wrongly typed 
 function replyClick() {
-	var accuracy = Math.round((whichCharacter / numKeysPressed) * 100);
-	alert("Your accuracy rate is: " + accuracy + "%");
+	var accuracy = Math.round((1 - (mistakes + numBackspace) / numKeysPressed) * 100);
+	alert("Your accuracy rate is: " + accuracy + "%; with " + numKeysPressed + " keys pressed & " + mistakes + " existing mistakes.");
 }
 
+//keyboard - CSS, use vw unit
+//look into SVG a little too, it's an image. transform translate; transform scale
+
+//store results in localstorage
 
 
