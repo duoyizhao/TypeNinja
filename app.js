@@ -50,14 +50,20 @@ document.onkeypress = function (e) {
 	var charId = whichCharacter.toString();
 	var lessonChar = document.getElementById(charId).innerText;
 	var lessonCharCode = lessonChar.charCodeAt(0);
-	var keys = ['a', 's', 'd', 'f'];
 
-	if (_.includes(keys, lessonChar)) {
-		document.getElementById(lessonChar).classList.add("highlighted");
-		setTimeout(function(){
-			document.getElementById(lessonChar).classList.remove("highlighted");
-		}, 500);
-	}
+	document.getElementById(lessonChar).classList.add("highlighted");
+	setTimeout(function(){
+		document.getElementById(lessonChar).classList.remove("highlighted");
+	}, 500);
+
+	// var keys = ['a', 's', 'd', 'f'];
+
+	// if (_.includes(keys, lessonChar)) {
+	// 	document.getElementById(lessonChar).classList.add("highlighted");
+	// 	setTimeout(function(){
+	// 		document.getElementById(lessonChar).classList.remove("highlighted");
+	// 	}, 500);
+	// }
 
 	if(window.event && e.keyCode != 8 && e.keyCode != 127) {
 		whichCharacter += 1;
@@ -107,5 +113,12 @@ function replyClick() {
 //look into SVG a little too, it's an image. transform translate; transform scale
 
 //store results in localstorage
+
+//Think about how to have the keyboard highlights appear before there is any kepress
+//how to singal the start of typing?
+
+//Write a script to run curl tests 
+
+//Host the server in a dev machine and figure it out with a link etc
 
 
