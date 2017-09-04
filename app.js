@@ -31,11 +31,21 @@ axios.get(`/lesson0.txt`)
    .then(function(response) {
    		text = response.data;
         totalCharNum = text.length;
-        for (i = 0; i < totalCharNum; i ++) {
-        	addElement(i);
-        }
+        console.log(totalCharNum);
+
+   		if (totalCharNum === 0) {
+   			document.getElementById("lesson").innerHTML = "Lesson is empty";
+   		} else {
+	        for (i = 0; i < totalCharNum; i ++) {
+	        	addElement(i);
+	        }
+    	} 
+
         scrollAmount = parseInt(window.getComputedStyle(document.getElementById("lesson")).height) / 2;
-   });
+   }).catch(function(response) {
+   	document.getElementById("lesson").innerHTML = "An error occured.";
+   	return Promise.reject(response);
+   })
  
 var numKeysPressed = 0;
 var whichCharacter = 0;
