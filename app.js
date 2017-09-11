@@ -1,5 +1,7 @@
 //import includes from 'lodash/includes';
 
+var axios = require('axios');
+
 var text;
 var totalCharNum;
 var charNum = 0;
