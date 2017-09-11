@@ -14,7 +14,7 @@ var app = require('../app');
 
 describe('app', function() {
 	it('addElement should turn each character in lesson into an html element', function() {
-		assert.equal(addElement(3), document.getElementById('3'));
+		assert.equal(app.addElement(3), document.getElementById('3'));
 	});
 	//it('should add an html element to the lesson div', )
 });
